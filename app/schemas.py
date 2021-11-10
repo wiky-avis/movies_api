@@ -52,4 +52,3 @@ class Movies:
             genre=self.genres,
             director=self.directors
         )
-
