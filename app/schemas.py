@@ -31,7 +31,7 @@ class Actor:
 
 
 @dataclass
-class Movies:
+class Movie:
     id: str
     title: str
     description: str

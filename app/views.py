@@ -4,6 +4,8 @@ from elasticsearch import Elasticsearch
 from typing import Dict, Any
 from flask_cors import CORS
 
+from app.actions import get_movie_by_id
+
 CORS(app)
 es_client = Elasticsearch()
 
@@ -41,10 +43,5 @@ def movies_list() -> Dict[str, Any]:
 @app.route("/api/movies/<movie_id>", methods=["GET"])
 def movie_details(movie_id: str) -> Dict[str, Any]:
     # Получает данные из ES об одном фильме
-    query = {
-        "match": {
-            "id": movie_id
-        }
-    }
-    result = es_client.search(index="movies", query=query)
-    return result
+    result = get_movie_by_id(es_client=es_client, movie_id=movie_id)
+    return result.to_dict()
