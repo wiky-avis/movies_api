@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-from app.api.v1.handlers.movies import MovieListApi, MovieDetailApi
+from app.api.v1.handlers.movies import MovieDetailApi, MovieListApi
 
 bp = Blueprint(name="movies_service_v1", import_name="movies_service", url_prefix="/api/v1")
 
