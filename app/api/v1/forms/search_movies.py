@@ -13,15 +13,15 @@ class SearchMoviesForm(Form):
         choices=[
             (SortField.ID.value, SortField.ID.value),
             (SortField.TITLE.value, SortField.TITLE.value),
-            (SortField.IMDB_RATING.value, SortField.IMDB_RATING.value)
+            (SortField.IMDB_RATING.value, SortField.IMDB_RATING.value),
         ],
-        default=SortField.ID.value
+        default=SortField.ID.value,
     )
     sort_order = SelectField(
         "sort_order",
         choices=[
             (SortOrder.ASC.value, SortOrder.ASC.value),
-            (SortOrder.DESC.value, SortOrder.DESC.value)
+            (SortOrder.DESC.value, SortOrder.DESC.value),
         ],
-        default=SortOrder.ASC.value
+        default=SortOrder.ASC.value,
     )

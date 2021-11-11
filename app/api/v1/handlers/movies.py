@@ -5,14 +5,12 @@ from flask import abort, jsonify, request
 
 from app.api.base.handler import MovieHandler
 from app.api.v1.forms.search_movies import SearchMoviesForm
-from app.api.v1.schemas.movie import ShortMovie
 from app.common.actions.movies import GetMovieDetail, GetMoviesList
 from app.common.validators.validation_errors import validation_errors_to_dict
 
 
 class MovieListApi(MovieHandler):
-
-    def get(self) -> List[ShortMovie]:
+    def get(self) -> List[dict]:
         """
         Получает данные из ES об отфильтрованном по request.args списке фильмов
         """
@@ -21,7 +19,10 @@ class MovieListApi(MovieHandler):
         if not form.validate():
             validation_errors = validation_errors_to_dict(form.errors)
         if validation_errors:
-            return jsonify(detail=validation_errors), HTTPStatus.UNPROCESSABLE_ENTITY
+            return (
+                jsonify(detail=validation_errors),
+                HTTPStatus.UNPROCESSABLE_ENTITY,
+            )
 
         get_movies_list = GetMoviesList(self.resources)
         movies = get_movies_list()
@@ -30,7 +31,6 @@ class MovieListApi(MovieHandler):
 
 
 class MovieDetailApi(MovieHandler):
-
     def get(self, movie_id: str) -> Dict[str, Any]:
         """
         Получает данные из ES об одном фильме

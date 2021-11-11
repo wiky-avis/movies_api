@@ -50,5 +50,5 @@ class Movie:
             writers=self.writers,
             actors=self.actors,
             genre=self.genres,
-            director=self.directors
+            director=self.directors,
         )

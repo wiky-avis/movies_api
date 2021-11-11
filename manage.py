@@ -15,5 +15,5 @@ def api():
     app.app.run(host=Config.HOST, port=Config.PORT, debug=Config.DEBUG)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()
