@@ -4,11 +4,11 @@ from typing import Any, Dict, List
 from flask import abort, jsonify, request
 
 from app import app
+from app.api.v1.forms.search_movies import SearchMoviesForm
+from app.api.v1.schemas.movie import ShortMovie
 from app.common.actions.movies import GetMovieDetail, GetMoviesList
-from app.common.validators.validation_errors import validation_errors_to_dict
-from app.forms.search_movies import SearchMoviesForm
 from app.common.resources import Resources
-from app.schemas.movie import ShortMovie
+from app.common.validators.validation_errors import validation_errors_to_dict
 
 resources = Resources()
 
