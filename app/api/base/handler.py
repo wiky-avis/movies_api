@@ -1,7 +1,7 @@
 from elasticsearch import Elasticsearch
 from flask.views import MethodView
 
-from app.common.resources import Resources
+from app.common.resources import Resources, Search
 
 
 class ResourcesMixin:
@@ -9,7 +9,7 @@ class ResourcesMixin:
     def resources(self) -> Resources:
         return Resources(
             es_client=Elasticsearch(),
-            search=self.app.common.resources.Search
+            search=Search
         )
 
 
