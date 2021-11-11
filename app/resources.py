@@ -1,8 +1,9 @@
 from dataclasses import dataclass
-from elasticsearch import Elasticsearch
 from typing import Optional
 
-from app.const import SortOrder, SortField
+from elasticsearch import Elasticsearch
+
+from app.const import SortField, SortOrder
 
 
 @dataclass

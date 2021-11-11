@@ -1,17 +1,16 @@
-from flask import jsonify, request, abort
-from app import app
-from elasticsearch import Elasticsearch
-from typing import Dict, Any, List
+from http import HTTPStatus
+from typing import Any, Dict, List
+
+from flask import abort, jsonify, request
 from flask_cors import CORS
 
+from app import app
 from app.actions import GetMovieDetail, GetMoviesList
 from app.forms import SearchMoviesForm
-from app.schemas import ShortMovie
-from http import HTTPStatus
 from app.resources import Resources
+from app.schemas import ShortMovie
 
 CORS(app)
-es_client = Elasticsearch()
 resources = Resources()
 
 

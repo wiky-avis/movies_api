@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List, Optional
 
 from app.const import SortField
-from app.schemas import Actor, Movie, ShortMovie, Writer
 from app.resources import Resources
+from app.schemas import Actor, Movie, ShortMovie, Writer
 
 
 class Action(ABC):
