@@ -1,5 +1,7 @@
 import click
 
+from settings.config import Config
+
 
 @click.group()
 def cli():
@@ -10,7 +12,7 @@ def cli():
 def api():
     import app
 
-    app.app.run(host="127.0.0.1", port=8000, debug=True)
+    app.app.run(host=Config.HOST, port=Config.PORT, debug=Config.DEBUG)
 
 
 if __name__ == '__main__':
