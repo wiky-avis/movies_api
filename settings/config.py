@@ -1,9 +1,11 @@
 import os
 from envparse import Env
 
+BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 env = Env()
 
-BASE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+env.read_envfile(os.path.join(BASE_PATH, '.env'))
 
 
 class Config:
