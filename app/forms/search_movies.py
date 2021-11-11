@@ -1,7 +1,7 @@
 from wtforms import Form, IntegerField, SelectField, StringField
 from wtforms.validators import NumberRange
 
-from app.const import SortField, SortOrder
+from app.common.constants.sort_movies import SortField, SortOrder
 
 
 class SearchMoviesForm(Form):

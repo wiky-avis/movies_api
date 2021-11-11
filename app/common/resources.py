@@ -3,7 +3,7 @@ from typing import Optional
 
 from elasticsearch import Elasticsearch
 
-from app.const import SortField, SortOrder
+from app.common.constants.sort_movies import SortField, SortOrder
 
 
 @dataclass

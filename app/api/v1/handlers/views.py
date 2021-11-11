@@ -2,24 +2,15 @@ from http import HTTPStatus
 from typing import Any, Dict, List
 
 from flask import abort, jsonify, request
-from flask_cors import CORS
 
 from app import app
-from app.actions import GetMovieDetail, GetMoviesList
-from app.forms import SearchMoviesForm
-from app.resources import Resources
-from app.schemas import ShortMovie
+from app.common.actions.movies import GetMovieDetail, GetMoviesList
+from app.common.validators.validation_errors import validation_errors_to_dict
+from app.forms.search_movies import SearchMoviesForm
+from app.common.resources import Resources
+from app.schemas.movie import ShortMovie
 
-CORS(app)
 resources = Resources()
-
-
-def validation_errors_to_dict(errors: dict) -> List[dict]:
-    validation_errors = []
-    for field_name, field_errors in errors.items():
-        for err in field_errors:
-            validation_errors.append({'loc': ['query', field_name], 'msg': err})
-    return validation_errors
 
 
 @app.route("/api/movies", methods=["GET"], strict_slashes=False)
