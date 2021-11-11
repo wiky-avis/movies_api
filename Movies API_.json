@@ -1741,7 +1741,7 @@
 		{
 			"id": "ebc166a5-7b5d-4f7b-a513-15babec9c60d",
 			"key": "baseUrl",
-			"value": "http://localhost:8000/api"
+			"value": "http://localhost:8000/api/v1"
 		}
 	],
 	"protocolProfileBehavior": {}
