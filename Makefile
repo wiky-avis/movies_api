@@ -4,6 +4,9 @@ run:
 install:
 	pip install -r requirements.txt
 
+install-linters:
+	pip install isort black flake8
+
 flake8-check:
 	flake8 --config=.flake8
 
