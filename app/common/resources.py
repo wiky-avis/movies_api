@@ -17,5 +17,5 @@ class Search:
 
 @dataclass
 class Resources:
-    es_client: Optional[Elasticsearch] = Elasticsearch()
-    search: Optional[Search] = Search
+    es_client: Optional[Elasticsearch] = None
+    search: Optional[Search] = None

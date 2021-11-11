@@ -1,18 +1,9 @@
-from abc import ABC, abstractmethod
 from typing import List, Optional
 
 from app.api.v1.schemas.movie import Actor, Movie, ShortMovie, Writer
+from app.common.actions.base import Action
 from app.common.constants.sort_movies import SortField
 from app.common.resources import Resources
-
-
-class Action(ABC):
-    def __await__(self):
-        return self.__call__()
-
-    @abstractmethod
-    async def __call__(self, *args, **kwargs):
-        raise NotImplementedError
 
 
 class GetMovieDetail(Action):
