@@ -5,3 +5,7 @@
 ## Запуск
 
     `flask run --host 127.0.0.1 --port 8000`
+
+## Примечание
+
+Для тестирования работы данного приложения, требуется запуск [этого](https://github.com/wiky-avis/etl-sql-elasticsearch)
