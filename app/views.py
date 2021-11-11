@@ -43,7 +43,7 @@ def movies_list() -> List[ShortMovie]:
 def movie_details(movie_id: str) -> Dict[str, Any]:
     # Получает данные из ES об одном фильме
     get_movie_by_id = GetMovieDetail(resources)
-    result = get_movie_by_id(movie_id=movie_id)
-    if result is None:
+    movie = get_movie_by_id(movie_id=movie_id)
+    if movie is None:
         abort(HTTPStatus.NOT_FOUND)
-    return result.to_dict()
+    return movie.to_dict()
