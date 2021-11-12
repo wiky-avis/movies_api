@@ -4,8 +4,8 @@ info:
   version: 1.0.0
   
 servers:
-- url: https://localhost/api
-- url: http://localhost/api
+- url: https://localhost:8000/api/v1
+- url: http://localhost:8000/api/v1
 tags:
 - name: movies
   description: Всё о фильмах
@@ -178,4 +178,3 @@ components:
               type:
                 type: string
                 example: "type_error.integer"
-            

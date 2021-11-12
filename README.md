@@ -10,3 +10,5 @@
 ## Примечание
 
 Для тестирования работы данного приложения, требуется запуск [этого](https://github.com/wiky-avis/etl-sql-elasticsearch)
+
+Пройдите по [ссылке](https://editor.swagger.io/) и скопируйте схему api из файла [openapi.yaml](openapi.yaml)
